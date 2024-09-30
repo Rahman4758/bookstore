@@ -24,6 +24,11 @@ try {
     console.log("Error: ", error);
 }
 
+const cors = require("cors");
+app.use(cors({
+  origin: "https://backend-edf21h85k-mohammad-rahmans-projects.vercel.app", // Vercel frontend URL
+}));
+
 // defining routes
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
