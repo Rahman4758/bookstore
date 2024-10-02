@@ -8,7 +8,7 @@ import userRoute from "./route/user.route.js";
 
 const app = express();
 
-app.use(cors());
+
 app.use(express.json());
 
 dotenv.config();
@@ -22,9 +22,10 @@ try {
     console.log("Connected to mongoDB");
 } catch (error) {
     console.log("Error: ", error);
+     process.exit(1);
 }
 
-const cors = require("cors");
+
 app.use(cors({
   origin: "https://bookstore-frontend-neon-zeta.vercel.app", // Vercel frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
