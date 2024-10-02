@@ -26,7 +26,9 @@ try {
 
 const cors = require("cors");
 app.use(cors({
-  origin: "*", // Vercel frontend URL
+  origin: "https://bookstore-frontend-neon-zeta.vercel.app", // Vercel frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
 }));
 
 // defining routes
