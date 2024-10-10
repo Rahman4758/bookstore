@@ -2,13 +2,13 @@
     "version": 2,
     "builds": [
         {
-            "src": "*.js",
+            "src": "index.js.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/"
+            "src": "/book(.*)",
+            "dest": "/index.js"
         
 }
