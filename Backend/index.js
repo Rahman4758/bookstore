@@ -17,14 +17,16 @@ const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI;
 
 // connect to mongoDB
+const connecctDB = async ()=>{
 try {
-    mongoose.connect(URI);
+   await mongoose.connect(URI);
     console.log("Connected to mongoDB");
 } catch (error) {
     console.log("Error: ", error);
      process.exit(1);
 }
-
+};
+connectDB();
 
 app.use(cors({
   origin: "https://bookstore-frontend-neon-zeta.vercel.app", // Vercel frontend URL
